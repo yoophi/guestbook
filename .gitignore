@@ -11,3 +11,4 @@ profiles.clj
 .nrepl-port
 /log
 guestbook_dev.db.mv.db
+guestbook_test.db.mv.db
