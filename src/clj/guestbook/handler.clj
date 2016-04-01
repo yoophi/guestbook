@@ -11,6 +11,6 @@
     (route/not-found
       (:body
         (error-page {:status 404
-                     :title "page not found"})))))
+                     :title  "page not found"})))))
 
 (def app (middleware/wrap-base #'app-routes))
