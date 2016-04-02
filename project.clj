@@ -14,6 +14,7 @@
                  [org.webjars.bower/tether "1.1.1"]
                  [org.webjars/jquery "2.2.1"]
                  [org.clojure/tools.logging "0.3.1"]
+                 [com.taoensso/tower "3.0.2"]
                  [compojure "1.5.0"]
                  [ring-webjars "0.1.1"]
                  [ring/ring-defaults "0.2.0"]
