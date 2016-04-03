@@ -14,10 +14,10 @@
                  [org.webjars.bower/tether "1.1.1"]
                  [org.webjars/jquery "2.2.1"]
                  [org.clojure/tools.logging "0.3.1"]
-                 [com.taoensso/tower "3.0.2"]
-                 [compojure "1.5.0"]
+                 [compojure "1.4.0"]
                  [ring-webjars "0.1.1"]
                  [ring/ring-defaults "0.2.0"]
+                 [ring "1.4.0" :exclusions [ring/ring-jetty-adapter]]
                  [mount "0.1.10"]
                  [cprop "0.1.6"]
                  [org.clojure/tools.cli "0.3.3"]
@@ -30,13 +30,14 @@
                  [luminus-log4j "0.1.3"]
                  [cljs-ajax "0.5.2"]
                  [reagent "0.5.1"]
-                 [org.clojure/clojurescript "1.7.228" :scope "provided"]]
+                 [org.clojure/clojurescript "1.7.228" :scope "provided"]
+                 [com.taoensso/sente "1.8.0"]
+                 ]
 
   :min-lein-version "2.0.0"
 
   :jvm-opts ["-server" "-Dconf=.lein-env"]
   :source-paths ["src/clj"]
-  :resource-paths ["resources" "target/cljsbuild"]
 
   :main guestbook.core
   :migratus {:store :database :db ~(get (System/getenv) "DATABASE_URL")}
@@ -44,6 +45,7 @@
   :plugins [[lein-cprop "1.0.1"]
             [migratus-lein "0.2.6"]
             [lein-cljsbuild "1.1.1"]]
+  :resource-paths ["resources" "target/cljsbuild"]
   :target-path "target/%s/"
   :cljsbuild {:builds {:app {:source-paths ["src/cljs"]
                              :compiler {:output-to  "target/cljsbuild/public/js/app.js"
